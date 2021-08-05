@@ -2,7 +2,6 @@
 using BenchmarkDotNet.Running;
 using EntityFramework_Estudos.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -36,21 +35,22 @@ namespace EntityFramework_Estudos
     }
 
     [MemoryDiagnoser]
-    public class TestesConsultas : IDisposable
+    public class TestesConsultas
     {
-        private readonly Context context = new Context();
-
         [Benchmark]
-        public List<Usuario> ObterUsuariosSemAsNoTracking() =>
-            context.Usuario.ToList();
-
-        [Benchmark]
-        public List<Usuario> ObterUsuariosComAsNoTracking() =>
-             context.Usuario.Select(x => new Usuario { Nome = x.Nome }).AsNoTracking().ToList();
-
-        public void Dispose()
+        public List<Usuario> ObterUsuariosSemAsNoTracking()
         {
-            context?.Dispose();
+            using var context = new Context();
+            var usuarios = context.Usuario.ToList();
+            return usuarios;
+        }
+
+        [Benchmark]
+        public List<Usuario> ObterUsuariosComAsNoTracking()
+        {
+            using var context = new Context();
+            var usuarios = context.Usuario.AsNoTracking().ToList();
+            return usuarios;
         }
     }
 }
