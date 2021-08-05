@@ -1,0 +1,711 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\EntityFramework-Estudos\bin\Release\netcoreapp3.1\6ab26797-6eb0-41ee-a817-37cb5346ff69
+// command took 1.36s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\EntityFramework-Estudos\bin\Release\netcoreapp3.1\6ab26797-6eb0-41ee-a817-37cb5346ff69
+// command took 2.06s and exited with 0
+// ***** Done, took 00:00:03 (3.49 sec)   *****
+// Found 1 benchmarks:
+//   Testes.ObterUsuarios: DefaultJob
+
+// **************************
+// Benchmark: Testes.ObterUsuarios: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "6ab26797-6eb0-41ee-a817-37cb5346ff69.dll" --benchmarkName "EntityFramework_Estudos.Testes.ObterUsuarios" --job "Default" --benchmarkId 0 in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\EntityFramework-Estudos\bin\Release\netcoreapp3.1\6ab26797-6eb0-41ee-a817-37cb5346ff69\bin\Release\netcoreapp3.1
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET Core 3.1.16 (CoreCLR 4.700.21.26205, CoreFX 4.700.21.26205), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 247300.00 ns, 247.3000 us/op
+warn: 8/4/2021 23:16:06.338 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+warn: 8/4/2021 23:16:06.366 SqlServerEventId.DecimalTypeDefaultWarning[30000] (Microsoft.EntityFrameworkCore.Model.Validation) 
+      No type was specified for the decimal property 'Salario' on entity type 'Cargo'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+info: 8/4/2021 23:16:06.459 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/4/2021 23:16:07.353 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadJitting  1: 1 op, 3313986300.00 ns, 3.3140 s/op
+
+info: 8/4/2021 23:16:07.380 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadWarmup   1: 1 op, 2643600.00 ns, 2.6436 ms/op
+info: 8/4/2021 23:16:07.384 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadWarmup   2: 1 op, 860700.00 ns, 860.7000 us/op
+info: 8/4/2021 23:16:07.388 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadWarmup   3: 1 op, 701700.00 ns, 701.7000 us/op
+info: 8/4/2021 23:16:07.392 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadWarmup   4: 1 op, 571300.00 ns, 571.3000 us/op
+info: 8/4/2021 23:16:07.397 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadWarmup   5: 1 op, 653700.00 ns, 653.7000 us/op
+info: 8/4/2021 23:16:07.401 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadWarmup   6: 1 op, 605200.00 ns, 605.2000 us/op
+info: 8/4/2021 23:16:07.404 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadWarmup   7: 1 op, 501000.00 ns, 501.0000 us/op
+info: 8/4/2021 23:16:07.408 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadWarmup   8: 1 op, 759600.00 ns, 759.6000 us/op
+info: 8/4/2021 23:16:07.411 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadWarmup   9: 1 op, 567500.00 ns, 567.5000 us/op
+
+// BeforeActualRun
+info: 8/4/2021 23:16:07.417 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual   1: 1 op, 750800.00 ns, 750.8000 us/op
+info: 8/4/2021 23:16:07.423 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual   2: 1 op, 668300.00 ns, 668.3000 us/op
+info: 8/4/2021 23:16:07.427 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual   3: 1 op, 746400.00 ns, 746.4000 us/op
+info: 8/4/2021 23:16:07.436 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual   4: 1 op, 793000.00 ns, 793.0000 us/op
+info: 8/4/2021 23:16:07.440 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual   5: 1 op, 668500.00 ns, 668.5000 us/op
+info: 8/4/2021 23:16:07.444 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual   6: 1 op, 647200.00 ns, 647.2000 us/op
+info: 8/4/2021 23:16:07.447 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual   7: 1 op, 586800.00 ns, 586.8000 us/op
+info: 8/4/2021 23:16:07.451 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual   8: 1 op, 728900.00 ns, 728.9000 us/op
+info: 8/4/2021 23:16:07.455 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual   9: 1 op, 529400.00 ns, 529.4000 us/op
+info: 8/4/2021 23:16:07.458 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  10: 1 op, 604800.00 ns, 604.8000 us/op
+info: 8/4/2021 23:16:07.461 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  11: 1 op, 579100.00 ns, 579.1000 us/op
+info: 8/4/2021 23:16:07.465 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  12: 1 op, 628500.00 ns, 628.5000 us/op
+info: 8/4/2021 23:16:07.469 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  13: 1 op, 512200.00 ns, 512.2000 us/op
+info: 8/4/2021 23:16:07.472 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  14: 1 op, 797800.00 ns, 797.8000 us/op
+info: 8/4/2021 23:16:07.476 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  15: 1 op, 614700.00 ns, 614.7000 us/op
+info: 8/4/2021 23:16:07.480 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  16: 1 op, 674100.00 ns, 674.1000 us/op
+info: 8/4/2021 23:16:07.484 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  17: 1 op, 870300.00 ns, 870.3000 us/op
+info: 8/4/2021 23:16:07.488 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  18: 1 op, 641400.00 ns, 641.4000 us/op
+info: 8/4/2021 23:16:07.492 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  19: 1 op, 636000.00 ns, 636.0000 us/op
+info: 8/4/2021 23:16:07.495 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  20: 1 op, 701800.00 ns, 701.8000 us/op
+info: 8/4/2021 23:16:07.499 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  21: 1 op, 614300.00 ns, 614.3000 us/op
+info: 8/4/2021 23:16:07.503 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  22: 1 op, 553300.00 ns, 553.3000 us/op
+info: 8/4/2021 23:16:07.507 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  23: 1 op, 715600.00 ns, 715.6000 us/op
+info: 8/4/2021 23:16:07.510 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  24: 1 op, 515800.00 ns, 515.8000 us/op
+info: 8/4/2021 23:16:07.514 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  25: 1 op, 608500.00 ns, 608.5000 us/op
+info: 8/4/2021 23:16:07.517 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  26: 1 op, 627800.00 ns, 627.8000 us/op
+info: 8/4/2021 23:16:07.521 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  27: 1 op, 630400.00 ns, 630.4000 us/op
+info: 8/4/2021 23:16:07.524 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  28: 1 op, 453100.00 ns, 453.1000 us/op
+info: 8/4/2021 23:16:07.527 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  29: 1 op, 691400.00 ns, 691.4000 us/op
+info: 8/4/2021 23:16:07.532 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  30: 1 op, 878700.00 ns, 878.7000 us/op
+info: 8/4/2021 23:16:07.536 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  31: 1 op, 754200.00 ns, 754.2000 us/op
+info: 8/4/2021 23:16:07.542 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  32: 1 op, 1347600.00 ns, 1.3476 ms/op
+info: 8/4/2021 23:16:07.549 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  33: 1 op, 1152100.00 ns, 1.1521 ms/op
+info: 8/4/2021 23:16:07.555 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  34: 1 op, 923200.00 ns, 923.2000 us/op
+info: 8/4/2021 23:16:07.562 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  35: 1 op, 1019600.00 ns, 1.0196 ms/op
+info: 8/4/2021 23:16:07.568 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  36: 1 op, 673300.00 ns, 673.3000 us/op
+info: 8/4/2021 23:16:07.573 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  37: 1 op, 904500.00 ns, 904.5000 us/op
+info: 8/4/2021 23:16:07.577 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  38: 1 op, 625800.00 ns, 625.8000 us/op
+info: 8/4/2021 23:16:07.580 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  39: 1 op, 721500.00 ns, 721.5000 us/op
+info: 8/4/2021 23:16:07.585 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  40: 1 op, 811500.00 ns, 811.5000 us/op
+info: 8/4/2021 23:16:07.589 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  41: 1 op, 614600.00 ns, 614.6000 us/op
+info: 8/4/2021 23:16:07.592 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  42: 1 op, 555600.00 ns, 555.6000 us/op
+info: 8/4/2021 23:16:07.596 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  43: 1 op, 922600.00 ns, 922.6000 us/op
+info: 8/4/2021 23:16:07.600 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  44: 1 op, 622400.00 ns, 622.4000 us/op
+info: 8/4/2021 23:16:07.604 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  45: 1 op, 597400.00 ns, 597.4000 us/op
+info: 8/4/2021 23:16:07.607 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  46: 1 op, 576200.00 ns, 576.2000 us/op
+info: 8/4/2021 23:16:07.611 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  47: 1 op, 608100.00 ns, 608.1000 us/op
+info: 8/4/2021 23:16:07.614 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  48: 1 op, 507100.00 ns, 507.1000 us/op
+info: 8/4/2021 23:16:07.618 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  49: 1 op, 2184800.00 ns, 2.1848 ms/op
+info: 8/4/2021 23:16:07.623 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  50: 1 op, 1503300.00 ns, 1.5033 ms/op
+info: 8/4/2021 23:16:07.628 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  51: 1 op, 1353600.00 ns, 1.3536 ms/op
+info: 8/4/2021 23:16:07.633 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  52: 1 op, 1322000.00 ns, 1.3220 ms/op
+info: 8/4/2021 23:16:07.637 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  53: 1 op, 1281100.00 ns, 1.2811 ms/op
+info: 8/4/2021 23:16:07.641 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  54: 1 op, 1197000.00 ns, 1.1970 ms/op
+info: 8/4/2021 23:16:07.645 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  55: 1 op, 1217000.00 ns, 1.2170 ms/op
+info: 8/4/2021 23:16:07.650 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  56: 1 op, 1129800.00 ns, 1.1298 ms/op
+info: 8/4/2021 23:16:07.654 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  57: 1 op, 1130400.00 ns, 1.1304 ms/op
+info: 8/4/2021 23:16:07.658 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  58: 1 op, 540900.00 ns, 540.9000 us/op
+info: 8/4/2021 23:16:07.661 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  59: 1 op, 584100.00 ns, 584.1000 us/op
+info: 8/4/2021 23:16:07.668 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  60: 1 op, 862800.00 ns, 862.8000 us/op
+info: 8/4/2021 23:16:07.675 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  61: 1 op, 936100.00 ns, 936.1000 us/op
+info: 8/4/2021 23:16:07.681 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  62: 1 op, 676600.00 ns, 676.6000 us/op
+info: 8/4/2021 23:16:07.685 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  63: 1 op, 1210400.00 ns, 1.2104 ms/op
+info: 8/4/2021 23:16:07.692 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  64: 1 op, 1002200.00 ns, 1.0022 ms/op
+info: 8/4/2021 23:16:07.697 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  65: 1 op, 645700.00 ns, 645.7000 us/op
+info: 8/4/2021 23:16:07.700 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  66: 1 op, 612300.00 ns, 612.3000 us/op
+info: 8/4/2021 23:16:07.704 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  67: 1 op, 595100.00 ns, 595.1000 us/op
+info: 8/4/2021 23:16:07.708 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  68: 1 op, 618000.00 ns, 618.0000 us/op
+info: 8/4/2021 23:16:07.712 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  69: 1 op, 777600.00 ns, 777.6000 us/op
+info: 8/4/2021 23:16:07.716 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  70: 1 op, 577200.00 ns, 577.2000 us/op
+info: 8/4/2021 23:16:07.720 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  71: 1 op, 589400.00 ns, 589.4000 us/op
+info: 8/4/2021 23:16:07.724 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  72: 1 op, 522000.00 ns, 522.0000 us/op
+info: 8/4/2021 23:16:07.727 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  73: 1 op, 624100.00 ns, 624.1000 us/op
+info: 8/4/2021 23:16:07.731 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  74: 1 op, 618100.00 ns, 618.1000 us/op
+info: 8/4/2021 23:16:07.735 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  75: 1 op, 586800.00 ns, 586.8000 us/op
+info: 8/4/2021 23:16:07.738 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  76: 1 op, 590900.00 ns, 590.9000 us/op
+info: 8/4/2021 23:16:07.742 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  77: 1 op, 548300.00 ns, 548.3000 us/op
+info: 8/4/2021 23:16:07.745 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  78: 1 op, 454700.00 ns, 454.7000 us/op
+info: 8/4/2021 23:16:07.749 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  79: 1 op, 640700.00 ns, 640.7000 us/op
+info: 8/4/2021 23:16:07.752 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  80: 1 op, 531400.00 ns, 531.4000 us/op
+info: 8/4/2021 23:16:07.756 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  81: 1 op, 525700.00 ns, 525.7000 us/op
+info: 8/4/2021 23:16:07.759 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  82: 1 op, 618400.00 ns, 618.4000 us/op
+info: 8/4/2021 23:16:07.762 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  83: 1 op, 523600.00 ns, 523.6000 us/op
+info: 8/4/2021 23:16:07.766 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  84: 1 op, 483600.00 ns, 483.6000 us/op
+info: 8/4/2021 23:16:07.770 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  85: 1 op, 593700.00 ns, 593.7000 us/op
+info: 8/4/2021 23:16:07.774 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  86: 1 op, 550100.00 ns, 550.1000 us/op
+info: 8/4/2021 23:16:07.777 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  87: 1 op, 579500.00 ns, 579.5000 us/op
+info: 8/4/2021 23:16:07.781 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  88: 1 op, 643900.00 ns, 643.9000 us/op
+info: 8/4/2021 23:16:07.785 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  89: 1 op, 559700.00 ns, 559.7000 us/op
+info: 8/4/2021 23:16:07.788 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  90: 1 op, 456000.00 ns, 456.0000 us/op
+info: 8/4/2021 23:16:07.793 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  91: 1 op, 756100.00 ns, 756.1000 us/op
+info: 8/4/2021 23:16:07.796 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  92: 1 op, 601100.00 ns, 601.1000 us/op
+info: 8/4/2021 23:16:07.800 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  93: 1 op, 525000.00 ns, 525.0000 us/op
+info: 8/4/2021 23:16:07.804 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  94: 1 op, 786300.00 ns, 786.3000 us/op
+info: 8/4/2021 23:16:07.808 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  95: 1 op, 526400.00 ns, 526.4000 us/op
+info: 8/4/2021 23:16:07.811 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  96: 1 op, 559800.00 ns, 559.8000 us/op
+info: 8/4/2021 23:16:07.815 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  97: 1 op, 573200.00 ns, 573.2000 us/op
+info: 8/4/2021 23:16:07.818 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  98: 1 op, 571400.00 ns, 571.4000 us/op
+info: 8/4/2021 23:16:07.822 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  99: 1 op, 488800.00 ns, 488.8000 us/op
+info: 8/4/2021 23:16:07.826 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadActual  100: 1 op, 678500.00 ns, 678.5000 us/op
+
+// AfterActualRun
+info: 8/4/2021 23:16:07.831 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+WorkloadResult   1: 1 op, 750800.00 ns, 750.8000 us/op
+WorkloadResult   2: 1 op, 668300.00 ns, 668.3000 us/op
+WorkloadResult   3: 1 op, 746400.00 ns, 746.4000 us/op
+WorkloadResult   4: 1 op, 793000.00 ns, 793.0000 us/op
+WorkloadResult   5: 1 op, 668500.00 ns, 668.5000 us/op
+WorkloadResult   6: 1 op, 647200.00 ns, 647.2000 us/op
+WorkloadResult   7: 1 op, 586800.00 ns, 586.8000 us/op
+WorkloadResult   8: 1 op, 728900.00 ns, 728.9000 us/op
+WorkloadResult   9: 1 op, 529400.00 ns, 529.4000 us/op
+WorkloadResult  10: 1 op, 604800.00 ns, 604.8000 us/op
+WorkloadResult  11: 1 op, 579100.00 ns, 579.1000 us/op
+WorkloadResult  12: 1 op, 628500.00 ns, 628.5000 us/op
+WorkloadResult  13: 1 op, 512200.00 ns, 512.2000 us/op
+WorkloadResult  14: 1 op, 797800.00 ns, 797.8000 us/op
+WorkloadResult  15: 1 op, 614700.00 ns, 614.7000 us/op
+WorkloadResult  16: 1 op, 674100.00 ns, 674.1000 us/op
+WorkloadResult  17: 1 op, 870300.00 ns, 870.3000 us/op
+WorkloadResult  18: 1 op, 641400.00 ns, 641.4000 us/op
+WorkloadResult  19: 1 op, 636000.00 ns, 636.0000 us/op
+WorkloadResult  20: 1 op, 701800.00 ns, 701.8000 us/op
+WorkloadResult  21: 1 op, 614300.00 ns, 614.3000 us/op
+WorkloadResult  22: 1 op, 553300.00 ns, 553.3000 us/op
+WorkloadResult  23: 1 op, 715600.00 ns, 715.6000 us/op
+WorkloadResult  24: 1 op, 515800.00 ns, 515.8000 us/op
+WorkloadResult  25: 1 op, 608500.00 ns, 608.5000 us/op
+WorkloadResult  26: 1 op, 627800.00 ns, 627.8000 us/op
+WorkloadResult  27: 1 op, 630400.00 ns, 630.4000 us/op
+WorkloadResult  28: 1 op, 453100.00 ns, 453.1000 us/op
+WorkloadResult  29: 1 op, 691400.00 ns, 691.4000 us/op
+WorkloadResult  30: 1 op, 878700.00 ns, 878.7000 us/op
+WorkloadResult  31: 1 op, 754200.00 ns, 754.2000 us/op
+WorkloadResult  32: 1 op, 923200.00 ns, 923.2000 us/op
+WorkloadResult  33: 1 op, 1019600.00 ns, 1.0196 ms/op
+WorkloadResult  34: 1 op, 673300.00 ns, 673.3000 us/op
+WorkloadResult  35: 1 op, 904500.00 ns, 904.5000 us/op
+WorkloadResult  36: 1 op, 625800.00 ns, 625.8000 us/op
+WorkloadResult  37: 1 op, 721500.00 ns, 721.5000 us/op
+WorkloadResult  38: 1 op, 811500.00 ns, 811.5000 us/op
+WorkloadResult  39: 1 op, 614600.00 ns, 614.6000 us/op
+WorkloadResult  40: 1 op, 555600.00 ns, 555.6000 us/op
+WorkloadResult  41: 1 op, 922600.00 ns, 922.6000 us/op
+WorkloadResult  42: 1 op, 622400.00 ns, 622.4000 us/op
+WorkloadResult  43: 1 op, 597400.00 ns, 597.4000 us/op
+WorkloadResult  44: 1 op, 576200.00 ns, 576.2000 us/op
+WorkloadResult  45: 1 op, 608100.00 ns, 608.1000 us/op
+WorkloadResult  46: 1 op, 507100.00 ns, 507.1000 us/op
+WorkloadResult  47: 1 op, 540900.00 ns, 540.9000 us/op
+WorkloadResult  48: 1 op, 584100.00 ns, 584.1000 us/op
+WorkloadResult  49: 1 op, 862800.00 ns, 862.8000 us/op
+WorkloadResult  50: 1 op, 936100.00 ns, 936.1000 us/op
+WorkloadResult  51: 1 op, 676600.00 ns, 676.6000 us/op
+WorkloadResult  52: 1 op, 1002200.00 ns, 1.0022 ms/op
+WorkloadResult  53: 1 op, 645700.00 ns, 645.7000 us/op
+WorkloadResult  54: 1 op, 612300.00 ns, 612.3000 us/op
+WorkloadResult  55: 1 op, 595100.00 ns, 595.1000 us/op
+WorkloadResult  56: 1 op, 618000.00 ns, 618.0000 us/op
+WorkloadResult  57: 1 op, 777600.00 ns, 777.6000 us/op
+WorkloadResult  58: 1 op, 577200.00 ns, 577.2000 us/op
+WorkloadResult  59: 1 op, 589400.00 ns, 589.4000 us/op
+WorkloadResult  60: 1 op, 522000.00 ns, 522.0000 us/op
+WorkloadResult  61: 1 op, 624100.00 ns, 624.1000 us/op
+WorkloadResult  62: 1 op, 618100.00 ns, 618.1000 us/op
+WorkloadResult  63: 1 op, 586800.00 ns, 586.8000 us/op
+WorkloadResult  64: 1 op, 590900.00 ns, 590.9000 us/op
+WorkloadResult  65: 1 op, 548300.00 ns, 548.3000 us/op
+WorkloadResult  66: 1 op, 454700.00 ns, 454.7000 us/op
+WorkloadResult  67: 1 op, 640700.00 ns, 640.7000 us/op
+WorkloadResult  68: 1 op, 531400.00 ns, 531.4000 us/op
+WorkloadResult  69: 1 op, 525700.00 ns, 525.7000 us/op
+WorkloadResult  70: 1 op, 618400.00 ns, 618.4000 us/op
+WorkloadResult  71: 1 op, 523600.00 ns, 523.6000 us/op
+WorkloadResult  72: 1 op, 483600.00 ns, 483.6000 us/op
+WorkloadResult  73: 1 op, 593700.00 ns, 593.7000 us/op
+WorkloadResult  74: 1 op, 550100.00 ns, 550.1000 us/op
+WorkloadResult  75: 1 op, 579500.00 ns, 579.5000 us/op
+WorkloadResult  76: 1 op, 643900.00 ns, 643.9000 us/op
+WorkloadResult  77: 1 op, 559700.00 ns, 559.7000 us/op
+WorkloadResult  78: 1 op, 456000.00 ns, 456.0000 us/op
+WorkloadResult  79: 1 op, 756100.00 ns, 756.1000 us/op
+WorkloadResult  80: 1 op, 601100.00 ns, 601.1000 us/op
+WorkloadResult  81: 1 op, 525000.00 ns, 525.0000 us/op
+WorkloadResult  82: 1 op, 786300.00 ns, 786.3000 us/op
+WorkloadResult  83: 1 op, 526400.00 ns, 526.4000 us/op
+WorkloadResult  84: 1 op, 559800.00 ns, 559.8000 us/op
+WorkloadResult  85: 1 op, 573200.00 ns, 573.2000 us/op
+WorkloadResult  86: 1 op, 571400.00 ns, 571.4000 us/op
+WorkloadResult  87: 1 op, 488800.00 ns, 488.8000 us/op
+WorkloadResult  88: 1 op, 678500.00 ns, 678.5000 us/op
+GC:  0 0 0 75888 1
+Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 19980 has exited with code 0
+
+Mean = 645.935 μs, StdErr = 13.279 μs (2.06%), N = 88, StdDev = 124.567 μs
+Min = 453.100 μs, Q1 = 568.500 μs, Median = 616.350 μs, Q3 = 694.000 μs, Max = 1,019.600 μs
+IQR = 125.500 μs, LowerFence = 380.250 μs, UpperFence = 882.250 μs
+ConfidenceInterval = [600.709 μs; 691.162 μs] (CI 99.9%), Margin = 45.227 μs (7.00% of Mean)
+Skewness = 1.06, Kurtosis = 3.69, MValue = 2.33
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\EntityFramework_Estudos.Testes-report.csv
+  BenchmarkDotNet.Artifacts\results\EntityFramework_Estudos.Testes-report-github.md
+  BenchmarkDotNet.Artifacts\results\EntityFramework_Estudos.Testes-report.html
+
+// * Detailed results *
+Testes.ObterUsuarios: DefaultJob
+Runtime = .NET Core 3.1.16 (CoreCLR 4.700.21.26205, CoreFX 4.700.21.26205), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 645.935 μs, StdErr = 13.279 μs (2.06%), N = 88, StdDev = 124.567 μs
+Min = 453.100 μs, Q1 = 568.500 μs, Median = 616.350 μs, Q3 = 694.000 μs, Max = 1,019.600 μs
+IQR = 125.500 μs, LowerFence = 380.250 μs, UpperFence = 882.250 μs
+ConfidenceInterval = [600.709 μs; 691.162 μs] (CI 99.9%), Margin = 45.227 μs (7.00% of Mean)
+Skewness = 1.06, Kurtosis = 3.69, MValue = 2.33
+-------------------- Histogram --------------------
+[416.343 μs ;   503.393 μs) | @@@@@
+[503.393 μs ;   574.943 μs) | @@@@@@@@@@@@@@@@@@@
+[574.943 μs ;   648.457 μs) | @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+[648.457 μs ;   735.357 μs) | @@@@@@@@@@@
+[735.357 μs ;   815.707 μs) | @@@@@
