@@ -1,0 +1,1218 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\EntityFramework-Estudos\bin\Release\netcoreapp3.1\ebd4043d-cd7e-4ee0-b1c3-1faed0b37c29
+// command took 1.42s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\EntityFramework-Estudos\bin\Release\netcoreapp3.1\ebd4043d-cd7e-4ee0-b1c3-1faed0b37c29
+// command took 2.18s and exited with 0
+// ***** Done, took 00:00:03 (3.69 sec)   *****
+// Found 1 benchmarks:
+//   TestesConsultas.PaginacaoComAsNoTracking: DefaultJob
+
+// **************************
+// Benchmark: TestesConsultas.PaginacaoComAsNoTracking: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "ebd4043d-cd7e-4ee0-b1c3-1faed0b37c29.dll" --benchmarkName "EntityFramework_Estudos.TestesConsultas.PaginacaoComAsNoTracking" --job "Default" --benchmarkId 0 in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\EntityFramework-Estudos\bin\Release\netcoreapp3.1\ebd4043d-cd7e-4ee0-b1c3-1faed0b37c29\bin\Release\netcoreapp3.1
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET Core 3.1.16 (CoreCLR 4.700.21.26205, CoreFX 4.700.21.26205), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 250100.00 ns, 250.1000 us/op
+warn: 8/5/2021 20:45:47.872 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+warn: 8/5/2021 20:45:47.901 SqlServerEventId.DecimalTypeDefaultWarning[30000] (Microsoft.EntityFrameworkCore.Model.Validation) 
+      No type was specified for the decimal property 'Salario' on entity type 'Cargo'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+info: 8/5/2021 20:45:47.967 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+warn: 8/5/2021 20:45:48.082 CoreEventId.RowLimitingOperationWithoutOrderByWarning[10102] (Microsoft.EntityFrameworkCore.Query) 
+      The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+warn: 8/5/2021 20:45:48.082 CoreEventId.RowLimitingOperationWithoutOrderByWarning[10102] (Microsoft.EntityFrameworkCore.Query) 
+      The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+info: 8/5/2021 20:45:48.370 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (30ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadJitting  1: 1 op, 1011512800.00 ns, 1.0115 s/op
+
+info: 8/5/2021 20:45:48.416 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.419 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadWarmup   1: 1 op, 22383100.00 ns, 22.3831 ms/op
+info: 8/5/2021 20:45:48.429 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.430 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadWarmup   2: 1 op, 6334200.00 ns, 6.3342 ms/op
+info: 8/5/2021 20:45:48.435 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.436 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadWarmup   3: 1 op, 983700.00 ns, 983.7000 us/op
+info: 8/5/2021 20:45:48.441 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.442 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadWarmup   4: 1 op, 757600.00 ns, 757.6000 us/op
+info: 8/5/2021 20:45:48.446 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.446 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadWarmup   5: 1 op, 784700.00 ns, 784.7000 us/op
+info: 8/5/2021 20:45:48.452 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.453 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadWarmup   6: 1 op, 936000.00 ns, 936.0000 us/op
+info: 8/5/2021 20:45:48.456 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.457 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadWarmup   7: 1 op, 605400.00 ns, 605.4000 us/op
+info: 8/5/2021 20:45:48.461 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.462 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadWarmup   8: 1 op, 746800.00 ns, 746.8000 us/op
+info: 8/5/2021 20:45:48.465 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.466 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadWarmup   9: 1 op, 900400.00 ns, 900.4000 us/op
+info: 8/5/2021 20:45:48.469 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.469 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadWarmup  10: 1 op, 564000.00 ns, 564.0000 us/op
+
+// BeforeActualRun
+info: 8/5/2021 20:45:48.481 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.481 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual   1: 1 op, 754600.00 ns, 754.6000 us/op
+info: 8/5/2021 20:45:48.486 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.486 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual   2: 1 op, 920700.00 ns, 920.7000 us/op
+info: 8/5/2021 20:45:48.491 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.491 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual   3: 1 op, 806100.00 ns, 806.1000 us/op
+info: 8/5/2021 20:45:48.499 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.500 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual   4: 1 op, 938900.00 ns, 938.9000 us/op
+info: 8/5/2021 20:45:48.504 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.504 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual   5: 1 op, 622400.00 ns, 622.4000 us/op
+info: 8/5/2021 20:45:48.508 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.508 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual   6: 1 op, 712900.00 ns, 712.9000 us/op
+info: 8/5/2021 20:45:48.511 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.511 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual   7: 1 op, 595400.00 ns, 595.4000 us/op
+info: 8/5/2021 20:45:48.515 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.515 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual   8: 1 op, 791400.00 ns, 791.4000 us/op
+info: 8/5/2021 20:45:48.518 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.518 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual   9: 1 op, 506300.00 ns, 506.3000 us/op
+info: 8/5/2021 20:45:48.522 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.522 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  10: 1 op, 760400.00 ns, 760.4000 us/op
+info: 8/5/2021 20:45:48.525 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.526 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  11: 1 op, 557600.00 ns, 557.6000 us/op
+info: 8/5/2021 20:45:48.529 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.529 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  12: 1 op, 654100.00 ns, 654.1000 us/op
+info: 8/5/2021 20:45:48.532 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.532 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  13: 1 op, 497300.00 ns, 497.3000 us/op
+info: 8/5/2021 20:45:48.536 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.537 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  14: 1 op, 739300.00 ns, 739.3000 us/op
+info: 8/5/2021 20:45:48.539 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.540 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  15: 1 op, 545200.00 ns, 545.2000 us/op
+info: 8/5/2021 20:45:48.543 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.543 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  16: 1 op, 704800.00 ns, 704.8000 us/op
+info: 8/5/2021 20:45:48.546 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.547 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  17: 1 op, 566900.00 ns, 566.9000 us/op
+info: 8/5/2021 20:45:48.551 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.551 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  18: 1 op, 743200.00 ns, 743.2000 us/op
+info: 8/5/2021 20:45:48.554 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.555 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  19: 1 op, 518900.00 ns, 518.9000 us/op
+info: 8/5/2021 20:45:48.558 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.558 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  20: 1 op, 692100.00 ns, 692.1000 us/op
+info: 8/5/2021 20:45:48.561 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.561 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  21: 1 op, 553300.00 ns, 553.3000 us/op
+info: 8/5/2021 20:45:48.566 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.566 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  22: 1 op, 711600.00 ns, 711.6000 us/op
+info: 8/5/2021 20:45:48.569 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.570 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  23: 1 op, 863200.00 ns, 863.2000 us/op
+info: 8/5/2021 20:45:48.573 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.573 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  24: 1 op, 805700.00 ns, 805.7000 us/op
+info: 8/5/2021 20:45:48.576 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.577 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  25: 1 op, 937100.00 ns, 937.1000 us/op
+info: 8/5/2021 20:45:48.580 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.580 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  26: 1 op, 670400.00 ns, 670.4000 us/op
+info: 8/5/2021 20:45:48.584 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.584 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  27: 1 op, 822600.00 ns, 822.6000 us/op
+info: 8/5/2021 20:45:48.588 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.588 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  28: 1 op, 697100.00 ns, 697.1000 us/op
+info: 8/5/2021 20:45:48.591 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.592 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  29: 1 op, 659400.00 ns, 659.4000 us/op
+info: 8/5/2021 20:45:48.595 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.595 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  30: 1 op, 517800.00 ns, 517.8000 us/op
+info: 8/5/2021 20:45:48.599 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.599 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  31: 1 op, 760800.00 ns, 760.8000 us/op
+info: 8/5/2021 20:45:48.602 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.603 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  32: 1 op, 586000.00 ns, 586.0000 us/op
+info: 8/5/2021 20:45:48.606 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.606 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  33: 1 op, 637500.00 ns, 637.5000 us/op
+info: 8/5/2021 20:45:48.609 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.609 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  34: 1 op, 495400.00 ns, 495.4000 us/op
+info: 8/5/2021 20:45:48.612 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.613 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  35: 1 op, 748200.00 ns, 748.2000 us/op
+info: 8/5/2021 20:45:48.616 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.616 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  36: 1 op, 544100.00 ns, 544.1000 us/op
+info: 8/5/2021 20:45:48.619 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.620 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  37: 1 op, 654500.00 ns, 654.5000 us/op
+info: 8/5/2021 20:45:48.623 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.624 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  38: 1 op, 590900.00 ns, 590.9000 us/op
+info: 8/5/2021 20:45:48.627 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.627 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  39: 1 op, 763100.00 ns, 763.1000 us/op
+info: 8/5/2021 20:45:48.630 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.631 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  40: 1 op, 604200.00 ns, 604.2000 us/op
+info: 8/5/2021 20:45:48.634 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.634 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  41: 1 op, 676500.00 ns, 676.5000 us/op
+info: 8/5/2021 20:45:48.637 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.638 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  42: 1 op, 628300.00 ns, 628.3000 us/op
+info: 8/5/2021 20:45:48.641 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.641 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  43: 1 op, 745300.00 ns, 745.3000 us/op
+info: 8/5/2021 20:45:48.644 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.645 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  44: 1 op, 519800.00 ns, 519.8000 us/op
+info: 8/5/2021 20:45:48.648 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.648 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  45: 1 op, 770500.00 ns, 770.5000 us/op
+info: 8/5/2021 20:45:48.652 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.653 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  46: 1 op, 798700.00 ns, 798.7000 us/op
+info: 8/5/2021 20:45:48.655 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.656 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  47: 1 op, 583200.00 ns, 583.2000 us/op
+info: 8/5/2021 20:45:48.659 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.659 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  48: 1 op, 592600.00 ns, 592.6000 us/op
+info: 8/5/2021 20:45:48.663 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.663 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  49: 1 op, 785600.00 ns, 785.6000 us/op
+info: 8/5/2021 20:45:48.666 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.666 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  50: 1 op, 671700.00 ns, 671.7000 us/op
+info: 8/5/2021 20:45:48.669 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.670 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  51: 1 op, 601500.00 ns, 601.5000 us/op
+info: 8/5/2021 20:45:48.673 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.673 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  52: 1 op, 802100.00 ns, 802.1000 us/op
+info: 8/5/2021 20:45:48.677 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.677 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  53: 1 op, 659600.00 ns, 659.6000 us/op
+info: 8/5/2021 20:45:48.681 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.681 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  54: 1 op, 775700.00 ns, 775.7000 us/op
+info: 8/5/2021 20:45:48.684 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.684 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  55: 1 op, 609900.00 ns, 609.9000 us/op
+info: 8/5/2021 20:45:48.688 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.688 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  56: 1 op, 961300.00 ns, 961.3000 us/op
+info: 8/5/2021 20:45:48.692 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.692 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  57: 1 op, 689700.00 ns, 689.7000 us/op
+info: 8/5/2021 20:45:48.695 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.696 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  58: 1 op, 755800.00 ns, 755.8000 us/op
+info: 8/5/2021 20:45:48.699 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.699 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  59: 1 op, 784200.00 ns, 784.2000 us/op
+info: 8/5/2021 20:45:48.703 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.703 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  60: 1 op, 669800.00 ns, 669.8000 us/op
+info: 8/5/2021 20:45:48.706 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.706 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  61: 1 op, 474500.00 ns, 474.5000 us/op
+info: 8/5/2021 20:45:48.711 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.711 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  62: 1 op, 731600.00 ns, 731.6000 us/op
+info: 8/5/2021 20:45:48.714 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.715 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  63: 1 op, 943000.00 ns, 943.0000 us/op
+info: 8/5/2021 20:45:48.719 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.719 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  64: 1 op, 694400.00 ns, 694.4000 us/op
+info: 8/5/2021 20:45:48.722 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.723 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  65: 1 op, 735200.00 ns, 735.2000 us/op
+info: 8/5/2021 20:45:48.726 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.726 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  66: 1 op, 754200.00 ns, 754.2000 us/op
+info: 8/5/2021 20:45:48.730 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.731 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  67: 1 op, 959600.00 ns, 959.6000 us/op
+info: 8/5/2021 20:45:48.734 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.734 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  68: 1 op, 689900.00 ns, 689.9000 us/op
+info: 8/5/2021 20:45:48.738 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.738 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  69: 1 op, 758100.00 ns, 758.1000 us/op
+info: 8/5/2021 20:45:48.742 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.743 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  70: 1 op, 917200.00 ns, 917.2000 us/op
+info: 8/5/2021 20:45:48.746 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.747 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  71: 1 op, 620800.00 ns, 620.8000 us/op
+info: 8/5/2021 20:45:48.749 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.750 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  72: 1 op, 644100.00 ns, 644.1000 us/op
+info: 8/5/2021 20:45:48.753 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.753 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  73: 1 op, 580000.00 ns, 580.0000 us/op
+info: 8/5/2021 20:45:48.756 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.757 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  74: 1 op, 798000.00 ns, 798.0000 us/op
+info: 8/5/2021 20:45:48.760 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.761 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  75: 1 op, 681100.00 ns, 681.1000 us/op
+info: 8/5/2021 20:45:48.764 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.764 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  76: 1 op, 701700.00 ns, 701.7000 us/op
+info: 8/5/2021 20:45:48.768 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.768 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  77: 1 op, 867400.00 ns, 867.4000 us/op
+info: 8/5/2021 20:45:48.773 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.773 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  78: 1 op, 966300.00 ns, 966.3000 us/op
+info: 8/5/2021 20:45:48.778 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.780 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  79: 1 op, 3727700.00 ns, 3.7277 ms/op
+info: 8/5/2021 20:45:48.784 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.785 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  80: 1 op, 1558300.00 ns, 1.5583 ms/op
+info: 8/5/2021 20:45:48.790 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.791 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  81: 1 op, 1177500.00 ns, 1.1775 ms/op
+info: 8/5/2021 20:45:48.797 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.797 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  82: 1 op, 1074500.00 ns, 1.0745 ms/op
+info: 8/5/2021 20:45:48.803 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.803 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  83: 1 op, 973100.00 ns, 973.1000 us/op
+info: 8/5/2021 20:45:48.808 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.809 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  84: 1 op, 892400.00 ns, 892.4000 us/op
+info: 8/5/2021 20:45:48.813 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.813 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  85: 1 op, 1018400.00 ns, 1.0184 ms/op
+info: 8/5/2021 20:45:48.818 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.818 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  86: 1 op, 731900.00 ns, 731.9000 us/op
+info: 8/5/2021 20:45:48.822 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.823 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  87: 1 op, 725300.00 ns, 725.3000 us/op
+info: 8/5/2021 20:45:48.826 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.826 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  88: 1 op, 655500.00 ns, 655.5000 us/op
+info: 8/5/2021 20:45:48.829 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.829 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  89: 1 op, 648500.00 ns, 648.5000 us/op
+info: 8/5/2021 20:45:48.832 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.833 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  90: 1 op, 786000.00 ns, 786.0000 us/op
+info: 8/5/2021 20:45:48.836 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.836 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  91: 1 op, 665600.00 ns, 665.6000 us/op
+info: 8/5/2021 20:45:48.839 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.840 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  92: 1 op, 817000.00 ns, 817.0000 us/op
+info: 8/5/2021 20:45:48.843 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.844 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  93: 1 op, 745800.00 ns, 745.8000 us/op
+info: 8/5/2021 20:45:48.849 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.849 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  94: 1 op, 880500.00 ns, 880.5000 us/op
+info: 8/5/2021 20:45:48.853 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.853 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  95: 1 op, 688800.00 ns, 688.8000 us/op
+info: 8/5/2021 20:45:48.856 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.857 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  96: 1 op, 705400.00 ns, 705.4000 us/op
+info: 8/5/2021 20:45:48.860 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.861 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  97: 1 op, 915300.00 ns, 915.3000 us/op
+info: 8/5/2021 20:45:48.865 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.865 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  98: 1 op, 705200.00 ns, 705.2000 us/op
+info: 8/5/2021 20:45:48.869 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.869 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  99: 1 op, 761200.00 ns, 761.2000 us/op
+info: 8/5/2021 20:45:48.874 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.874 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadActual  100: 1 op, 1054300.00 ns, 1.0543 ms/op
+
+// AfterActualRun
+info: 8/5/2021 20:45:48.890 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 5.0.8 initialized 'Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+info: 8/5/2021 20:45:48.890 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='20', @__p_1='10'], CommandType='Text', CommandTimeout='30']
+      SELECT [u].[Id], [u].[CargoId], [u].[EnderecoId], [u].[Nome], [u].[Sobrenome], [u].[Telefone]
+      FROM [Usuario] AS [u]
+      ORDER BY (SELECT 1)
+      OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+WorkloadResult   1: 1 op, 754600.00 ns, 754.6000 us/op
+WorkloadResult   2: 1 op, 920700.00 ns, 920.7000 us/op
+WorkloadResult   3: 1 op, 806100.00 ns, 806.1000 us/op
+WorkloadResult   4: 1 op, 938900.00 ns, 938.9000 us/op
+WorkloadResult   5: 1 op, 622400.00 ns, 622.4000 us/op
+WorkloadResult   6: 1 op, 712900.00 ns, 712.9000 us/op
+WorkloadResult   7: 1 op, 595400.00 ns, 595.4000 us/op
+WorkloadResult   8: 1 op, 791400.00 ns, 791.4000 us/op
+WorkloadResult   9: 1 op, 506300.00 ns, 506.3000 us/op
+WorkloadResult  10: 1 op, 760400.00 ns, 760.4000 us/op
+WorkloadResult  11: 1 op, 557600.00 ns, 557.6000 us/op
+WorkloadResult  12: 1 op, 654100.00 ns, 654.1000 us/op
+WorkloadResult  13: 1 op, 497300.00 ns, 497.3000 us/op
+WorkloadResult  14: 1 op, 739300.00 ns, 739.3000 us/op
+WorkloadResult  15: 1 op, 545200.00 ns, 545.2000 us/op
+WorkloadResult  16: 1 op, 704800.00 ns, 704.8000 us/op
+WorkloadResult  17: 1 op, 566900.00 ns, 566.9000 us/op
+WorkloadResult  18: 1 op, 743200.00 ns, 743.2000 us/op
+WorkloadResult  19: 1 op, 518900.00 ns, 518.9000 us/op
+WorkloadResult  20: 1 op, 692100.00 ns, 692.1000 us/op
+WorkloadResult  21: 1 op, 553300.00 ns, 553.3000 us/op
+WorkloadResult  22: 1 op, 711600.00 ns, 711.6000 us/op
+WorkloadResult  23: 1 op, 863200.00 ns, 863.2000 us/op
+WorkloadResult  24: 1 op, 805700.00 ns, 805.7000 us/op
+WorkloadResult  25: 1 op, 937100.00 ns, 937.1000 us/op
+WorkloadResult  26: 1 op, 670400.00 ns, 670.4000 us/op
+WorkloadResult  27: 1 op, 822600.00 ns, 822.6000 us/op
+WorkloadResult  28: 1 op, 697100.00 ns, 697.1000 us/op
+WorkloadResult  29: 1 op, 659400.00 ns, 659.4000 us/op
+WorkloadResult  30: 1 op, 517800.00 ns, 517.8000 us/op
+WorkloadResult  31: 1 op, 760800.00 ns, 760.8000 us/op
+WorkloadResult  32: 1 op, 586000.00 ns, 586.0000 us/op
+WorkloadResult  33: 1 op, 637500.00 ns, 637.5000 us/op
+WorkloadResult  34: 1 op, 495400.00 ns, 495.4000 us/op
+WorkloadResult  35: 1 op, 748200.00 ns, 748.2000 us/op
+WorkloadResult  36: 1 op, 544100.00 ns, 544.1000 us/op
+WorkloadResult  37: 1 op, 654500.00 ns, 654.5000 us/op
+WorkloadResult  38: 1 op, 590900.00 ns, 590.9000 us/op
+WorkloadResult  39: 1 op, 763100.00 ns, 763.1000 us/op
+WorkloadResult  40: 1 op, 604200.00 ns, 604.2000 us/op
+WorkloadResult  41: 1 op, 676500.00 ns, 676.5000 us/op
+WorkloadResult  42: 1 op, 628300.00 ns, 628.3000 us/op
+WorkloadResult  43: 1 op, 745300.00 ns, 745.3000 us/op
+WorkloadResult  44: 1 op, 519800.00 ns, 519.8000 us/op
+WorkloadResult  45: 1 op, 770500.00 ns, 770.5000 us/op
+WorkloadResult  46: 1 op, 798700.00 ns, 798.7000 us/op
+WorkloadResult  47: 1 op, 583200.00 ns, 583.2000 us/op
+WorkloadResult  48: 1 op, 592600.00 ns, 592.6000 us/op
+WorkloadResult  49: 1 op, 785600.00 ns, 785.6000 us/op
+WorkloadResult  50: 1 op, 671700.00 ns, 671.7000 us/op
+WorkloadResult  51: 1 op, 601500.00 ns, 601.5000 us/op
+WorkloadResult  52: 1 op, 802100.00 ns, 802.1000 us/op
+WorkloadResult  53: 1 op, 659600.00 ns, 659.6000 us/op
+WorkloadResult  54: 1 op, 775700.00 ns, 775.7000 us/op
+WorkloadResult  55: 1 op, 609900.00 ns, 609.9000 us/op
+WorkloadResult  56: 1 op, 961300.00 ns, 961.3000 us/op
+WorkloadResult  57: 1 op, 689700.00 ns, 689.7000 us/op
+WorkloadResult  58: 1 op, 755800.00 ns, 755.8000 us/op
+WorkloadResult  59: 1 op, 784200.00 ns, 784.2000 us/op
+WorkloadResult  60: 1 op, 669800.00 ns, 669.8000 us/op
+WorkloadResult  61: 1 op, 474500.00 ns, 474.5000 us/op
+WorkloadResult  62: 1 op, 731600.00 ns, 731.6000 us/op
+WorkloadResult  63: 1 op, 943000.00 ns, 943.0000 us/op
+WorkloadResult  64: 1 op, 694400.00 ns, 694.4000 us/op
+WorkloadResult  65: 1 op, 735200.00 ns, 735.2000 us/op
+WorkloadResult  66: 1 op, 754200.00 ns, 754.2000 us/op
+WorkloadResult  67: 1 op, 959600.00 ns, 959.6000 us/op
+WorkloadResult  68: 1 op, 689900.00 ns, 689.9000 us/op
+WorkloadResult  69: 1 op, 758100.00 ns, 758.1000 us/op
+WorkloadResult  70: 1 op, 917200.00 ns, 917.2000 us/op
+WorkloadResult  71: 1 op, 620800.00 ns, 620.8000 us/op
+WorkloadResult  72: 1 op, 644100.00 ns, 644.1000 us/op
+WorkloadResult  73: 1 op, 580000.00 ns, 580.0000 us/op
+WorkloadResult  74: 1 op, 798000.00 ns, 798.0000 us/op
+WorkloadResult  75: 1 op, 681100.00 ns, 681.1000 us/op
+WorkloadResult  76: 1 op, 701700.00 ns, 701.7000 us/op
+WorkloadResult  77: 1 op, 867400.00 ns, 867.4000 us/op
+WorkloadResult  78: 1 op, 966300.00 ns, 966.3000 us/op
+WorkloadResult  79: 1 op, 973100.00 ns, 973.1000 us/op
+WorkloadResult  80: 1 op, 892400.00 ns, 892.4000 us/op
+WorkloadResult  81: 1 op, 1018400.00 ns, 1.0184 ms/op
+WorkloadResult  82: 1 op, 731900.00 ns, 731.9000 us/op
+WorkloadResult  83: 1 op, 725300.00 ns, 725.3000 us/op
+WorkloadResult  84: 1 op, 655500.00 ns, 655.5000 us/op
+WorkloadResult  85: 1 op, 648500.00 ns, 648.5000 us/op
+WorkloadResult  86: 1 op, 786000.00 ns, 786.0000 us/op
+WorkloadResult  87: 1 op, 665600.00 ns, 665.6000 us/op
+WorkloadResult  88: 1 op, 817000.00 ns, 817.0000 us/op
+WorkloadResult  89: 1 op, 745800.00 ns, 745.8000 us/op
+WorkloadResult  90: 1 op, 880500.00 ns, 880.5000 us/op
+WorkloadResult  91: 1 op, 688800.00 ns, 688.8000 us/op
+WorkloadResult  92: 1 op, 705400.00 ns, 705.4000 us/op
+WorkloadResult  93: 1 op, 915300.00 ns, 915.3000 us/op
+WorkloadResult  94: 1 op, 705200.00 ns, 705.2000 us/op
+WorkloadResult  95: 1 op, 761200.00 ns, 761.2000 us/op
+GC:  0 0 0 69616 1
+Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 13616 has exited with code 0
+
+Mean = 717.539 μs, StdErr = 12.862 μs (1.79%), N = 95, StdDev = 125.361 μs
+Min = 474.500 μs, Q1 = 632.900 μs, Median = 705.400 μs, Q3 = 785.800 μs, Max = 1,018.400 μs
+IQR = 152.900 μs, LowerFence = 403.550 μs, UpperFence = 1,015.150 μs
+ConfidenceInterval = [673.847 μs; 761.231 μs] (CI 99.9%), Margin = 43.692 μs (6.09% of Mean)
+Skewness = 0.29, Kurtosis = 2.55, MValue = 2.48
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\EntityFramework_Estudos.TestesConsultas-report.csv
+  BenchmarkDotNet.Artifacts\results\EntityFramework_Estudos.TestesConsultas-report-github.md
+  BenchmarkDotNet.Artifacts\results\EntityFramework_Estudos.TestesConsultas-report.html
+
+// * Detailed results *
+TestesConsultas.PaginacaoComAsNoTracking: DefaultJob
+Runtime = .NET Core 3.1.16 (CoreCLR 4.700.21.26205, CoreFX 4.700.21.26205), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 717.539 μs, StdErr = 12.862 μs (1.79%), N = 95, StdDev = 125.361 μs
+Min = 474.500 μs, Q1 = 632.900 μs, Median = 705.400 μs, Q3 = 785.800 μs, Max = 1,018.400 μs
+IQR = 152.900 μs, LowerFence = 403.550 μs, UpperFence = 1,015.150 μs
+ConfidenceInterval = [673.847 μs; 761.231 μs] (CI 99.9%), Margin = 43.692 μs (6.09% of Mean)
+Skewness = 0.29, Kurtosis = 2.55, MValue = 2.48
+-------------------- Histogram --------------------
+[461.090 μs ;   540.940 μs) | @@@@@@@
+[540.940 μs ;   618.740 μs) | @@@@@@@@@@@@@@
+[618.740 μs ;   689.390 μs) | @@@@@@@@@@@@@@@@@@
+[689.390 μs ;   761.510 μs) | @@@@@@@@@@@@@@@@@@@@@@@@@@@
+[761.510 μs ;   828.910 μs) | @@@@@@@@@@@@@@
+[828.910 μs ;   908.140 μs) | @@@@
+[908.140 μs ;   980.260 μs) | @@@@@@@@@@
+[980.260 μs ; 1,054.460 μs) | @
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.0, OS=Windows 10.0.18363.1679 (1909/November2019Update/19H2)
+Intel Core i7-8700 CPU 3.20GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical cores
+.NET SDK=5.0.301
+  [Host]     : .NET Core 3.1.16 (CoreCLR 4.700.21.26205, CoreFX 4.700.21.26205), X64 RyuJIT
+  DefaultJob : .NET Core 3.1.16 (CoreCLR 4.700.21.26205, CoreFX 4.700.21.26205), X64 RyuJIT
+
+
+|                   Method |     Mean |    Error |   StdDev | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------------------------- |---------:|---------:|---------:|------:|------:|------:|----------:|
+| PaginacaoComAsNoTracking | 717.5 μs | 43.69 μs | 125.4 μs |     - |     - |     - |     68 KB |
+
+// * Warnings *
+MinIterationTime
+  TestesConsultas.PaginacaoComAsNoTracking: Default -> The minimum observed iteration time is 474.5000 μs which is very small. It's recommended to increase it to at least 100.0000 ms using more operations.
+
+// * Hints *
+Outliers
+  TestesConsultas.PaginacaoComAsNoTracking: Default -> 5 outliers were removed (1.05 ms..3.73 ms)
+
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Gen 0     : GC Generation 0 collects per 1000 operations
+  Gen 1     : GC Generation 1 collects per 1000 operations
+  Gen 2     : GC Generation 2 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 μs      : 1 Microsecond (0.000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:00:02 (2.09 sec), executed benchmarks: 1
+
+Global total time: 00:00:05 (5.79 sec), executed benchmarks: 1
+// * Artifacts cleanup *

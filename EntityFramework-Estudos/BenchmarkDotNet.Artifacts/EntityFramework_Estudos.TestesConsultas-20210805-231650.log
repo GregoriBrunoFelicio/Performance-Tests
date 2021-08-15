@@ -1,0 +1,3 @@
+// Validating benchmarks:
+Benchmark TestesConsultas.Somar1 returns a deferred execution result (IEnumerable<TestesConsultas.Pessoa>). You need to either change the method declaration to return a materialized result or consume it on your own. You can use .Consume() extension method to do that.
+Benchmark TestesConsultas.Somar2 returns a deferred execution result (IEnumerable<TestesConsultas.Pessoa>). You need to either change the method declaration to return a materialized result or consume it on your own. You can use .Consume() extension method to do that.
