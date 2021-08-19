@@ -1,5 +1,4 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Running;
 using EntityFramework_Estudos.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -27,13 +26,13 @@ namespace EntityFramework_Estudos
             //context.Usuario.AddRange(usuario);
             //context.SaveChanges();
 
-            //var teste = new TestesConsultas();
+            var teste = new TestesConsultas();
 
-            //var a = teste.JoinComLinq();
-            //var b = teste.JoinSemLinq();
-            //var c = teste.JoinComInclude();
+            var a = teste.JoinComLinq();
+            var b = teste.JoinSemLinq();
+            var c = teste.JoinComInclude();
 
-            BenchmarkRunner.Run<TestesConsultas>();
+            //BenchmarkRunner.Run<TestesConsultas>();
         }
     }
 
