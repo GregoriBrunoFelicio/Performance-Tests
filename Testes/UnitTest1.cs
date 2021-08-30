@@ -10,13 +10,11 @@ namespace Testes
 
         private Teste teste;
 
-
         public async Task InitializeAsync()
         {
             teste = new Teste();
             result = await teste.Foo();
         }
-
 
         [Fact]
         public void Test1()

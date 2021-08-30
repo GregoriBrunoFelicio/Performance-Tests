@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>EntityFramework_Estudos.TestesConsultas-20210815-135722</title>
+<title>EntityFramework_Estudos.TestesConsultas-20210830-200159</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -22,11 +22,14 @@ Intel Core i7-8700 CPU 3.20GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical c
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>  Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+<thead><tr><th>          Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>JoinComLinq</td><td>7.987 ms</td><td>0.0793 ms</td><td>0.0703 ms</td><td>453.1250</td><td>156.2500</td><td>62.5000</td><td>3 MB</td>
-</tr><tr><td>JoinSemLinq</td><td>7.968 ms</td><td>0.0611 ms</td><td>0.0541 ms</td><td>453.1250</td><td>156.2500</td><td>62.5000</td><td>3 MB</td>
-</tr><tr><td>JoinComInclude</td><td>18.259 ms</td><td>0.3594 ms</td><td>0.4798 ms</td><td>875.0000</td><td>375.0000</td><td>156.2500</td><td>5 MB</td>
+</thead><tbody><tr><td>ConsultaComToList</td><td>310.005 ms</td><td>23.2458 ms</td><td>68.5408 ms</td><td>323.239 ms</td><td>-</td><td>-</td><td>-</td><td>1 MB</td>
+</tr><tr><td>ConsultaComAsQueriable</td><td>309.913 ms</td><td>22.7954 ms</td><td>67.2128 ms</td><td>334.579 ms</td><td>-</td><td>-</td><td>-</td><td>1 MB</td>
+</tr><tr><td>ConsultaComNada</td><td>341.504 ms</td><td>9.3959 ms</td><td>26.5014 ms</td><td>337.589 ms</td><td>-</td><td>-</td><td>-</td><td>1 MB</td>
+</tr><tr><td>JoinComLinq</td><td>7.896 ms</td><td>0.0773 ms</td><td>0.0645 ms</td><td>7.903 ms</td><td>453.1250</td><td>156.2500</td><td>62.5000</td><td>3 MB</td>
+</tr><tr><td>JoinSemLinq</td><td>8.064 ms</td><td>0.1378 ms</td><td>0.1222 ms</td><td>8.043 ms</td><td>453.1250</td><td>156.2500</td><td>62.5000</td><td>3 MB</td>
+</tr><tr><td>JoinComInclude</td><td>13.354 ms</td><td>0.6989 ms</td><td>2.0608 ms</td><td>12.604 ms</td><td>-</td><td>-</td><td>-</td><td>5 MB</td>
 </tr></tbody></table>
 </body>
 </html>

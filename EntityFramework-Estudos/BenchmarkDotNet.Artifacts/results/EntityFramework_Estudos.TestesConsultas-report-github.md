@@ -8,8 +8,11 @@ Intel Core i7-8700 CPU 3.20GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical c
 
 
 ```
-|         Method |      Mean |     Error |    StdDev |    Gen 0 |    Gen 1 |    Gen 2 | Allocated |
-|--------------- |----------:|----------:|----------:|---------:|---------:|---------:|----------:|
-|    JoinComLinq |  7.987 ms | 0.0793 ms | 0.0703 ms | 453.1250 | 156.2500 |  62.5000 |      3 MB |
-|    JoinSemLinq |  7.968 ms | 0.0611 ms | 0.0541 ms | 453.1250 | 156.2500 |  62.5000 |      3 MB |
-| JoinComInclude | 18.259 ms | 0.3594 ms | 0.4798 ms | 875.0000 | 375.0000 | 156.2500 |      5 MB |
+|                 Method |       Mean |      Error |     StdDev |     Median |    Gen 0 |    Gen 1 |   Gen 2 | Allocated |
+|----------------------- |-----------:|-----------:|-----------:|-----------:|---------:|---------:|--------:|----------:|
+|      ConsultaComToList | 310.005 ms | 23.2458 ms | 68.5408 ms | 323.239 ms |        - |        - |       - |      1 MB |
+| ConsultaComAsQueriable | 309.913 ms | 22.7954 ms | 67.2128 ms | 334.579 ms |        - |        - |       - |      1 MB |
+|        ConsultaComNada | 341.504 ms |  9.3959 ms | 26.5014 ms | 337.589 ms |        - |        - |       - |      1 MB |
+|            JoinComLinq |   7.896 ms |  0.0773 ms |  0.0645 ms |   7.903 ms | 453.1250 | 156.2500 | 62.5000 |      3 MB |
+|            JoinSemLinq |   8.064 ms |  0.1378 ms |  0.1222 ms |   8.043 ms | 453.1250 | 156.2500 | 62.5000 |      3 MB |
+|         JoinComInclude |  13.354 ms |  0.6989 ms |  2.0608 ms |  12.604 ms |        - |        - |       - |      5 MB |

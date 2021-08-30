@@ -1,7 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
-using EntityFramework_Estudos.Models;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
+using System;
 using System.Linq;
 
 namespace EntityFramework_Estudos
@@ -10,35 +8,52 @@ namespace EntityFramework_Estudos
     {
         public static void Main()
         {
-            //var endereco = context.Endereco.Include(x => x.Usuarios).ToList();
-            //context.Database.EnsureCreated();
-            //var databaseCreator = context.GetService<IRelationalDatabaseCreator>();
-
-            //var context = new Context();
-            //var usuario = new Faker<Usuario>()
-            //    .RuleFor(x => x.Nome, f => f.Random.Word())
-            //    .RuleFor(x => x.Sobrenome, f => f.Random.Word())
-            //    .RuleFor(x => x.Telefone, f => f.Random.Word())
-            //    .RuleFor(x => x.Cargo, f => new Faker<Cargo>().RuleFor(x => x.Nome, f => f.Random.Word()).RuleFor(x => x.Salario, f => f.Random.Decimal()).Generate())
-            //    .RuleFor(x => x.Endereco, f => new Faker<Endereco>().RuleFor(x => x.Rua, f => f.Random.Word()).Generate())
-            //    .Generate(900);
-
-            //context.Usuario.AddRange(usuario);
-            //context.SaveChanges();
-
-            var teste = new TestesConsultas();
-
-            var a = teste.JoinComLinq();
-            var b = teste.JoinSemLinq();
-            var c = teste.JoinComInclude();
-
-            //BenchmarkRunner.Run<TestesConsultas>();
+            var context = new Context();
+            var cargos = context.Cargo.AsQueryable();
+            var a = cargos.Where(x => x.Id > 10).ToList();
         }
     }
 
     [MemoryDiagnoser]
     public class TestesConsultas
     {
+
+        [Benchmark]
+        public void ConsultaComToList()
+        {
+            using var context = new Context();
+            var cargoes = context.Cargo.ToList();
+
+            foreach (var cargo in cargoes)
+            {
+                Console.WriteLine(cargo.Nome);
+            }
+        }
+
+        [Benchmark]
+        public void ConsultaComAsQueriable()
+        {
+            using var context = new Context();
+            var cargoes = context.Cargo.AsQueryable();
+
+            foreach (var cargo in cargoes)
+            {
+                Console.WriteLine(cargo.Nome);
+            }
+        }
+
+        [Benchmark]
+        public void ConsultaComNada()
+        {
+            using var context = new Context();
+            var cargoes = context.Cargo;
+
+            foreach (var cargo in cargoes)
+            {
+                Console.WriteLine(cargo.Nome);
+            }
+        }
+
         //[Benchmark]
         //public List<Usuario> ObterUsuariosSemAsNoTracking()
         //{
@@ -89,49 +104,49 @@ namespace EntityFramework_Estudos
         //    return usuario;
         //}
 
-        [Benchmark]
-        public List<Usuario> JoinComLinq()
-        {
-            using var context = new Context();
-            var usuario = context.Usuario.Join(context.Endereco, u => u.EnderecoId, e => e.Id, (u, e) => new { u, e })
-                .Join(context.Cargo, @t => @t.u.EnderecoId, c => c.Id,
-                    (@t, c) => new Usuario
-                    {
-                        Nome = @t.u.Nome,
-                        Cargo = c,
-                        Endereco = @t.e,
-                        Sobrenome = @t.u.Sobrenome,
-                        Telefone = @t.u.Telefone
-                    });
+        //    [Benchmark]
+        //    public List<Usuario> JoinComLinq()
+        //    {
+        //        using var context = new Context();
+        //        var usuario = context.Usuario.Join(context.Endereco, u => u.EnderecoId, e => e.Id, (u, e) => new { u, e })
+        //            .Join(context.Cargo, @t => @t.u.EnderecoId, c => c.Id,
+        //                (@t, c) => new Usuario
+        //                {
+        //                    Nome = @t.u.Nome,
+        //                    Cargo = c,
+        //                    Endereco = @t.e,
+        //                    Sobrenome = @t.u.Sobrenome,
+        //                    Telefone = @t.u.Telefone
+        //                });
 
-            return usuario.ToList();
-        }
+        //        return usuario.ToList();
+        //    }
 
-        [Benchmark]
-        public List<Usuario> JoinSemLinq()
-        {
-            using var context = new Context();
-            var usuario = from u in context.Usuario
-                          join e in context.Endereco on u.EnderecoId equals e.Id
-                          join c in context.Cargo on u.EnderecoId equals c.Id
-                          select new Usuario
-                          {
-                              Nome = u.Nome,
-                              Cargo = c,
-                              Endereco = e,
-                              Sobrenome = u.Sobrenome,
-                              Telefone = u.Telefone
-                          };
+        //    [Benchmark]
+        //    public List<Usuario> JoinSemLinq()
+        //    {
+        //        using var context = new Context();
+        //        var usuario = from u in context.Usuario
+        //                      join e in context.Endereco on u.EnderecoId equals e.Id
+        //                      join c in context.Cargo on u.EnderecoId equals c.Id
+        //                      select new Usuario
+        //                      {
+        //                          Nome = u.Nome,
+        //                          Cargo = c,
+        //                          Endereco = e,
+        //                          Sobrenome = u.Sobrenome,
+        //                          Telefone = u.Telefone
+        //                      };
 
-            return usuario.ToList();
-        }
+        //        return usuario.ToList();
+        //    }
 
-        [Benchmark]
-        public List<Usuario> JoinComInclude()
-        {
-            using var context = new Context();
-            var usuario = context.Usuario.Include(x => x.Cargo).Include(x => x.Endereco);
-            return usuario.ToList();
-        }
+        //    [Benchmark]
+        //    public List<Usuario> JoinComInclude()
+        //    {
+        //        using var context = new Context();
+        //        var usuario = context.Usuario.Include(x => x.Cargo).Include(x => x.Endereco);
+        //        return usuario.ToList();
+        //    }
     }
 }
