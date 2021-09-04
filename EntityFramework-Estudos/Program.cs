@@ -1,5 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
+using BenchmarkDotNet.Running;
 using System.Linq;
 
 namespace EntityFramework_Estudos
@@ -8,51 +8,59 @@ namespace EntityFramework_Estudos
     {
         public static void Main()
         {
-            var context = new Context();
-            var cargos = context.Cargo.AsQueryable();
-            var a = cargos.Where(x => x.Id > 10).ToList();
+            //var context = new Context();
+            //var cargos = context.Cargo.AsQueryable();
+            //var a = cargos.Where(x => x.Id > 10);
+            //foreach (var cargo in a)
+            //{
+            //    Console.WriteLine(cargo.Nome);
+            //}
+            BenchmarkRunner.Run<TestesMetodos>();
         }
     }
 
     [MemoryDiagnoser]
+    public class TestesMetodos
+    {
+        [Benchmark]
+        public string Teste1()
+        {
+            var n = Enumerable.Range(1, 10).Select(x => x);
+
+            return n.FirstOrDefault().ToString();
+        }
+
+        [Benchmark]
+        public string Teste2() => Enumerable.Range(1, 10).Select(x => x).FirstOrDefault().ToString();
+    }
+
+    //[MemoryDiagnoser]
     public class TestesConsultas
     {
 
-        [Benchmark]
-        public void ConsultaComToList()
-        {
-            using var context = new Context();
-            var cargoes = context.Cargo.ToList();
+        //[Benchmark]
+        //public void ConsultaComToList()
+        //{
+        //    var context = new Context();
+        //    var cargos = context.Cargo.ToList();
+        //    var a = cargos.Where(x => x.Id > 10);
+        //    foreach (var cargo in a)
+        //    {
+        //        Console.WriteLine(cargo.Nome);
+        //    }
+        //}
 
-            foreach (var cargo in cargoes)
-            {
-                Console.WriteLine(cargo.Nome);
-            }
-        }
-
-        [Benchmark]
-        public void ConsultaComAsQueriable()
-        {
-            using var context = new Context();
-            var cargoes = context.Cargo.AsQueryable();
-
-            foreach (var cargo in cargoes)
-            {
-                Console.WriteLine(cargo.Nome);
-            }
-        }
-
-        [Benchmark]
-        public void ConsultaComNada()
-        {
-            using var context = new Context();
-            var cargoes = context.Cargo;
-
-            foreach (var cargo in cargoes)
-            {
-                Console.WriteLine(cargo.Nome);
-            }
-        }
+        //[Benchmark]
+        //public void ConsultaComAsQueriable()
+        //{
+        //    var context = new Context();
+        //    var cargos = context.Cargo.AsQueryable().ToList();
+        //    var a = cargos.Where(x => x.Id > 10);
+        //    foreach (var cargo in a)
+        //    {
+        //        Console.WriteLine(cargo.Nome);
+        //    }
+        //}
 
         //[Benchmark]
         //public List<Usuario> ObterUsuariosSemAsNoTracking()
