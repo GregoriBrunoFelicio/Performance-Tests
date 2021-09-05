@@ -1,6 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
-using System.Linq;
 
 namespace EntityFramework_Estudos
 {
@@ -22,16 +21,47 @@ namespace EntityFramework_Estudos
     [MemoryDiagnoser]
     public class TestesMetodos
     {
-        [Benchmark]
-        public string Teste1()
-        {
-            var n = Enumerable.Range(1, 10).Select(x => x);
 
-            return n.FirstOrDefault().ToString();
+        [Benchmark]
+        public int Sum1()
+        {
+            var sum = 0;
+            var x = 10;
+
+            for (var i = 0; i < 100; i++)
+            {
+                sum += x * 2 % 5;
+            }
+
+            return sum;
         }
 
+
         [Benchmark]
-        public string Teste2() => Enumerable.Range(1, 10).Select(x => x).FirstOrDefault().ToString();
+        public int Sum2()
+        {
+            var sum = 0;
+            var x = 10 * 2 % 5;
+            ;
+
+            for (var i = 0; i < 100; i++)
+            {
+                sum += x;
+            }
+
+            return sum;
+        }
+
+        //[Benchmark]
+        //public string Teste1()
+        //{
+        //    var n = Enumerable.Range(1, 10).Select(x => x);
+
+        //    return n.FirstOrDefault().ToString();
+        //}
+
+        //[Benchmark]
+        //public string Teste2() => Enumerable.Range(1, 10).Select(x => x).FirstOrDefault().ToString();
     }
 
     //[MemoryDiagnoser]
