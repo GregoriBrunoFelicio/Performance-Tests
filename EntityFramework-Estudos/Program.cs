@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
+using System.Text;
 
 namespace EntityFramework_Estudos
 {
@@ -14,6 +15,8 @@ namespace EntityFramework_Estudos
             //{
             //    Console.WriteLine(cargo.Nome);
             //}
+            //var testes = new TestesMetodos();
+
             BenchmarkRunner.Run<TestesMetodos>();
         }
     }
@@ -21,170 +24,219 @@ namespace EntityFramework_Estudos
     [MemoryDiagnoser]
     public class TestesMetodos
     {
-
         [Benchmark]
-        public int Sum1()
+        public string TesteString1()
         {
-            var sum = 0;
-            var x = 10;
+            var strn = ":)";
+            var numero = 1;
+            var palavra1 = "Palavra 1";
+            var palavra2 = "Palavra 2";
+            var palavra3 = "Palavra 3";
 
-            for (var i = 0; i < 100; i++)
-            {
-                sum += x * 2 % 5;
-            }
-
-            return sum;
+            strn = numero + "-" + palavra1 + "-" + palavra2 + "-" + palavra3;
+            return strn;
         }
 
-
         [Benchmark]
-        public int Sum2()
+        public string TesteString2()
         {
-            var sum = 0;
-            var x = 10 * 2 % 5;
-            ;
+            var strn = ":)";
+            var numero = 1;
+            var palavra1 = "Palavra 1";
+            var palavra2 = "Palavra 2";
+            var palavra3 = "Palavra 3";
 
-            for (var i = 0; i < 100; i++)
-            {
-                sum += x;
-            }
+            strn = $"{numero}-{palavra1}-{palavra2}-{palavra3}";
 
-            return sum;
+            return strn;
         }
 
-        //[Benchmark]
-        //public string Teste1()
-        //{
-        //    var n = Enumerable.Range(1, 10).Select(x => x);
+        [Benchmark]
+        public string TesteString3()
+        {
+            var strn = ":)";
+            var numero = 1;
+            var palavra1 = "Palavra 1";
+            var palavra2 = "Palavra 2";
+            var palavra3 = "Palavra 3";
 
-        //    return n.FirstOrDefault().ToString();
-        //}
+            var stb = new StringBuilder();
 
-        //[Benchmark]
-        //public string Teste2() => Enumerable.Range(1, 10).Select(x => x).FirstOrDefault().ToString();
+            stb.Append(numero);
+            stb.Append("-");
+            stb.Append(palavra1);
+            stb.Append("-");
+            stb.Append(palavra2);
+            stb.Append("-");
+            stb.Append(palavra3);
+
+            strn = stb.ToString();
+            return strn;
+        }
     }
 
-    //[MemoryDiagnoser]
-    public class TestesConsultas
-    {
+    //[Benchmark]
+    //public int Sum1()
+    //{
+    //    var sum = 0;
+    //    var x = 10;
 
-        //[Benchmark]
-        //public void ConsultaComToList()
-        //{
-        //    var context = new Context();
-        //    var cargos = context.Cargo.ToList();
-        //    var a = cargos.Where(x => x.Id > 10);
-        //    foreach (var cargo in a)
-        //    {
-        //        Console.WriteLine(cargo.Nome);
-        //    }
-        //}
+    //    for (var i = 0; i < 100; i++)
+    //    {
+    //        sum += x * 2 % 5;
+    //    }
 
-        //[Benchmark]
-        //public void ConsultaComAsQueriable()
-        //{
-        //    var context = new Context();
-        //    var cargos = context.Cargo.AsQueryable().ToList();
-        //    var a = cargos.Where(x => x.Id > 10);
-        //    foreach (var cargo in a)
-        //    {
-        //        Console.WriteLine(cargo.Nome);
-        //    }
-        //}
+    //    return sum;
+    //}
 
-        //[Benchmark]
-        //public List<Usuario> ObterUsuariosSemAsNoTracking()
-        //{
-        //    using var context = new Context();
-        //    var usuarios = context.Usuario.ToList();
-        //    return usuarios;
-        //}
 
-        //[Benchmark]
-        //public List<Usuario> ObterUsuariosComAsNoTracking()
-        //{
-        //    using var context = new Context();
-        //    var usuarios = context.Usuario.AsNoTracking().ToList();
-        //    return usuarios;
-        //}
+    //[Benchmark]
+    //public int Sum2()
+    //{
+    //    var sum = 0;
+    //    var x = 10 * 2 % 5;
+    //    ;
 
-        //[Benchmark]
-        //public IList<Usuario> PaginacaoComAsNoTracking()
-        //{
-        //    var pagina = 3;
-        //    var tamanhoPagina = 10;
-        //    using var context = new Context();
-        //    var usuarios = context.Usuario.AsNoTracking().Skip((pagina - 1) * tamanhoPagina).Take(tamanhoPagina).AsQueryable();
-        //    return usuarios.ToList();
-        //}
+    //    for (var i = 0; i < 100; i++)
+    //    {
+    //        sum += x;
+    //    }
 
-        //[Benchmark]
-        //public List<Usuario> PaginacaoSemAsNoTracking()
-        //{
-        //    using var context = new Context();
-        //    var usuarios = context.Usuario.AsNoTracking().ToList();
-        //    return usuarios;
-        //}
+    //    return sum;
+    //}
 
-        //[Benchmark]
-        //public async Task<Usuario> FirstOrDefault()
-        //{
-        //    await using var context = new Context();
-        //    var usuario = await context.Usuario.AsNoTracking().FirstOrDefaultAsync(x => x.Id == 103);
-        //    return usuario;
-        //}
+    //[Benchmark]
+    //public string Teste1()
+    //{
+    //    var n = Enumerable.Range(1, 10).Select(x => x);
 
-        //[Benchmark]
-        //public async Task<Usuario> SingleOrDefault()
-        //{
-        //    await using var context = new Context();
-        //    var usuario = await context.Usuario.AsNoTracking().SingleOrDefaultAsync(x => x.Id == 103);
-        //    return usuario;
-        //}
+    //    return n.FirstOrDefault().ToString();
+    //}
 
-        //    [Benchmark]
-        //    public List<Usuario> JoinComLinq()
-        //    {
-        //        using var context = new Context();
-        //        var usuario = context.Usuario.Join(context.Endereco, u => u.EnderecoId, e => e.Id, (u, e) => new { u, e })
-        //            .Join(context.Cargo, @t => @t.u.EnderecoId, c => c.Id,
-        //                (@t, c) => new Usuario
-        //                {
-        //                    Nome = @t.u.Nome,
-        //                    Cargo = c,
-        //                    Endereco = @t.e,
-        //                    Sobrenome = @t.u.Sobrenome,
-        //                    Telefone = @t.u.Telefone
-        //                });
+    //[Benchmark]
+    //public string Teste2() => Enumerable.Range(1, 10).Select(x => x).FirstOrDefault().ToString();
+}
 
-        //        return usuario.ToList();
-        //    }
+//[MemoryDiagnoser]
+public class TestesConsultas
+{
 
-        //    [Benchmark]
-        //    public List<Usuario> JoinSemLinq()
-        //    {
-        //        using var context = new Context();
-        //        var usuario = from u in context.Usuario
-        //                      join e in context.Endereco on u.EnderecoId equals e.Id
-        //                      join c in context.Cargo on u.EnderecoId equals c.Id
-        //                      select new Usuario
-        //                      {
-        //                          Nome = u.Nome,
-        //                          Cargo = c,
-        //                          Endereco = e,
-        //                          Sobrenome = u.Sobrenome,
-        //                          Telefone = u.Telefone
-        //                      };
+    //[Benchmark]
+    //public void ConsultaComToList()
+    //{
+    //    var context = new Context();
+    //    var cargos = context.Cargo.ToList();
+    //    var a = cargos.Where(x => x.Id > 10);
+    //    foreach (var cargo in a)
+    //    {
+    //        Console.WriteLine(cargo.Nome);
+    //    }
+    //}
 
-        //        return usuario.ToList();
-        //    }
+    //[Benchmark]
+    //public void ConsultaComAsQueriable()
+    //{
+    //    var context = new Context();
+    //    var cargos = context.Cargo.AsQueryable().ToList();
+    //    var a = cargos.Where(x => x.Id > 10);
+    //    foreach (var cargo in a)
+    //    {
+    //        Console.WriteLine(cargo.Nome);
+    //    }
+    //}
 
-        //    [Benchmark]
-        //    public List<Usuario> JoinComInclude()
-        //    {
-        //        using var context = new Context();
-        //        var usuario = context.Usuario.Include(x => x.Cargo).Include(x => x.Endereco);
-        //        return usuario.ToList();
-        //    }
-    }
+    //[Benchmark]
+    //public List<Usuario> ObterUsuariosSemAsNoTracking()
+    //{
+    //    using var context = new Context();
+    //    var usuarios = context.Usuario.ToList();
+    //    return usuarios;
+    //}
+
+    //[Benchmark]
+    //public List<Usuario> ObterUsuariosComAsNoTracking()
+    //{
+    //    using var context = new Context();
+    //    var usuarios = context.Usuario.AsNoTracking().ToList();
+    //    return usuarios;
+    //}
+
+    //[Benchmark]
+    //public IList<Usuario> PaginacaoComAsNoTracking()
+    //{
+    //    var pagina = 3;
+    //    var tamanhoPagina = 10;
+    //    using var context = new Context();
+    //    var usuarios = context.Usuario.AsNoTracking().Skip((pagina - 1) * tamanhoPagina).Take(tamanhoPagina).AsQueryable();
+    //    return usuarios.ToList();
+    //}
+
+    //[Benchmark]
+    //public List<Usuario> PaginacaoSemAsNoTracking()
+    //{
+    //    using var context = new Context();
+    //    var usuarios = context.Usuario.AsNoTracking().ToList();
+    //    return usuarios;
+    //}
+
+    //[Benchmark]
+    //public async Task<Usuario> FirstOrDefault()
+    //{
+    //    await using var context = new Context();
+    //    var usuario = await context.Usuario.AsNoTracking().FirstOrDefaultAsync(x => x.Id == 103);
+    //    return usuario;
+    //}
+
+    //[Benchmark]
+    //public async Task<Usuario> SingleOrDefault()
+    //{
+    //    await using var context = new Context();
+    //    var usuario = await context.Usuario.AsNoTracking().SingleOrDefaultAsync(x => x.Id == 103);
+    //    return usuario;
+    //}
+
+    //[Benchmark]
+    //public List<Usuario> JoinComLinq()
+    //{
+    //    using var context = new Context();
+    //    var usuario = context.Usuario.Join(context.Endereco, u => u.EnderecoId, e => e.Id, (u, e) => new { u, e })
+    //        .Join(context.Cargo, @t => @t.u.EnderecoId, c => c.Id,
+    //            (@t, c) => new Usuario
+    //            {
+    //                Nome = @t.u.Nome,
+    //                Cargo = c,
+    //                Endereco = @t.e,
+    //                Sobrenome = @t.u.Sobrenome,
+    //                Telefone = @t.u.Telefone
+    //            });
+
+    //    return usuario.ToList();
+    //}
+
+    //[Benchmark]
+    //public List<Usuario> JoinSemLinq()
+    //{
+    //    using var context = new Context();
+    //    var usuario = from u in context.Usuario
+    //                  join e in context.Endereco on u.EnderecoId equals e.Id
+    //                  join c in context.Cargo on u.EnderecoId equals c.Id
+    //                  select new Usuario
+    //                  {
+    //                      Nome = u.Nome,
+    //                      Cargo = c,
+    //                      Endereco = e,
+    //                      Sobrenome = u.Sobrenome,
+    //                      Telefone = u.Telefone
+    //                  };
+
+    //    return usuario.ToList();
+    //}
+
+    //[Benchmark]
+    //public List<Usuario> JoinComInclude()
+    //{
+    //    using var context = new Context();
+    //    var usuario = context.Usuario.Include(x => x.Cargo).Include(x => x.Endereco);
+    //    return usuario.ToList();
+    //}
 }
