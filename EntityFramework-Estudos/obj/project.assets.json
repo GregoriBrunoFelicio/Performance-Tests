@@ -7934,9 +7934,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\EntityFramework-Estudos\\EntityFramework-Estudos\\EntityFramework-Estudos.csproj",
-      "projectName": "EntityFramework-Estudos",
-      "projectPath": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\EntityFramework-Estudos\\EntityFramework-Estudos\\EntityFramework-Estudos.csproj",
+      "projectUniqueName": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\EntityFramework-Estudos\\EntityFramework-Estudos\\Program.csproj",
+      "projectName": "Program",
+      "projectPath": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\EntityFramework-Estudos\\EntityFramework-Estudos\\Program.csproj",
       "packagesPath": "C:\\Users\\GregoriBrunoFelicio\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\EntityFramework-Estudos\\EntityFramework-Estudos\\obj\\",
       "projectStyle": "PackageReference",

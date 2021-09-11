@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A3sHrBnJu7Wj/0MQqOTAWhX9d/kCFZGn61hMyFLk0bcLycd+zSEd/w2fpN0XvGyfvSeNtUCO7QuZlv0m1IQmAQ==",
+  "dgSpecHash": "9WKNitto3iSANtbIWobTCAOpDzsmBPbxZFkkNs5B8S9wNC2JEX/jYxd3IUuNaGVzjqc3dOK6hjwHjWuYaOhD0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\EntityFramework-Estudos\\EntityFramework-Estudos\\EntityFramework-Estudos.csproj",
+  "projectFilePath": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\EntityFramework-Estudos\\EntityFramework-Estudos\\Program.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GregoriBrunoFelicio\\.nuget\\packages\\benchmarkdotnet\\0.13.0\\benchmarkdotnet.0.13.0.nupkg.sha512",
     "C:\\Users\\GregoriBrunoFelicio\\.nuget\\packages\\benchmarkdotnet.annotations\\0.13.0\\benchmarkdotnet.annotations.0.13.0.nupkg.sha512",
