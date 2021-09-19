@@ -1,0 +1,219 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 2 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\Program\bin\Release\net5.0\59192fb1-a07d-4fa8-a5de-68f258a2e7c5
+// command took 1.32s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\Program\bin\Release\net5.0\59192fb1-a07d-4fa8-a5de-68f258a2e7c5
+// command took 2.08s and exited with 0
+// ***** Done, took 00:00:03 (3.48 sec)   *****
+// Found 2 benchmarks:
+//   Teste.SafeSum: DefaultJob [dia=10, ano=10, mes=10]
+//   Teste.UnsafeSum: DefaultJob [dia=10, ano=10, mes=10]
+
+// **************************
+// Benchmark: Teste.SafeSum: DefaultJob [dia=10, ano=10, mes=10]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "59192fb1-a07d-4fa8-a5de-68f258a2e7c5.dll" --benchmarkName "Program.Teste.SafeSum(dia: 10, ano: 10, mes: 10)" --job "Default" --benchmarkId 0 in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\Program\bin\Release\net5.0\59192fb1-a07d-4fa8-a5de-68f258a2e7c5\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.8 (5.0.821.31504), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 275500.00 ns, 275.5000 us/op
+WorkloadJitting  1: 1 op, 651500.00 ns, 651.5000 us/op
+
+OverheadJitting  2: 16 op, 275500.00 ns, 17.2188 us/op
+WorkloadJitting  2: 16 op, 272500.00 ns, 17.0312 us/op
+
+WorkloadPilot    1: 16 op, 1100.00 ns, 68.7500 ns/op
+WorkloadPilot    2: 32 op, 800.00 ns, 25.0000 ns/op
+WorkloadPilot    3: 64 op, 1100.00 ns, 17.1875 ns/op
+WorkloadPilot    4: 128 op, 1500.00 ns, 11.7188 ns/op
+WorkloadPilot    5: 256 op, 2300.00 ns, 8.9844 ns/op
+WorkloadPilot    6: 512 op, 4000.00 ns, 7.8125 ns/op
+WorkloadPilot    7: 1024 op, 10100.00 ns, 9.8633 ns/op
+WorkloadPilot    8: 2048 op, 14000.00 ns, 6.8359 ns/op
+WorkloadPilot    9: 4096 op, 27400.00 ns, 6.6895 ns/op
+WorkloadPilot   10: 8192 op, 54200.00 ns, 6.6162 ns/op
+WorkloadPilot   11: 16384 op, 107900.00 ns, 6.5857 ns/op
+WorkloadPilot   12: 32768 op, 222900.00 ns, 6.8024 ns/op
+WorkloadPilot   13: 65536 op, 430100.00 ns, 6.5628 ns/op
+WorkloadPilot   14: 131072 op, 930400.00 ns, 7.0984 ns/op
+WorkloadPilot   15: 262144 op, 1833900.00 ns, 6.9958 ns/op
+WorkloadPilot   16: 524288 op, 3477100.00 ns, 6.6320 ns/op
+WorkloadPilot   17: 1048576 op, 7420600.00 ns, 7.0768 ns/op
+WorkloadPilot   18: 2097152 op, 14179300.00 ns, 6.7612 ns/op
+WorkloadPilot   19: 4194304 op, 27871800.00 ns, 6.6452 ns/op
+WorkloadPilot   20: 8388608 op, 56682600.00 ns, 6.7571 ns/op
+WorkloadPilot   21: 16777216 op, 93330400.00 ns, 5.5629 ns/op
+WorkloadPilot   22: 33554432 op, 149248800.00 ns, 4.4480 ns/op
+WorkloadPilot   23: 67108864 op, 296934500.00 ns, 4.4247 ns/op
+WorkloadPilot   24: 134217728 op, 594380500.00 ns, 4.4285 ns/op
+
+OverheadWarmup   1: 134217728 op, 244187500.00 ns, 1.8193 ns/op
+OverheadWarmup   2: 134217728 op, 184372400.00 ns, 1.3737 ns/op
+OverheadWarmup   3: 134217728 op, 184987200.00 ns, 1.3783 ns/op
+OverheadWarmup   4: 134217728 op, 184723000.00 ns, 1.3763 ns/op
+OverheadWarmup   5: 134217728 op, 185154400.00 ns, 1.3795 ns/op
+OverheadWarmup   6: 134217728 op, 184382600.00 ns, 1.3738 ns/op
+
+OverheadActual   1: 134217728 op, 187139200.00 ns, 1.3943 ns/op
+OverheadActual   2: 134217728 op, 190347100.00 ns, 1.4182 ns/op
+OverheadActual   3: 134217728 op, 184780700.00 ns, 1.3767 ns/op
+OverheadActual   4: 134217728 op, 194514900.00 ns, 1.4492 ns/op
+OverheadActual   5: 134217728 op, 194526900.00 ns, 1.4493 ns/op
+OverheadActual   6: 134217728 op, 185473300.00 ns, 1.3819 ns/op
+OverheadActual   7: 134217728 op, 188247900.00 ns, 1.4026 ns/op
+OverheadActual   8: 134217728 op, 184884800.00 ns, 1.3775 ns/op
+OverheadActual   9: 134217728 op, 187478600.00 ns, 1.3968 ns/op
+OverheadActual  10: 134217728 op, 187432300.00 ns, 1.3965 ns/op
+OverheadActual  11: 134217728 op, 187735900.00 ns, 1.3987 ns/op
+OverheadActual  12: 134217728 op, 186145100.00 ns, 1.3869 ns/op
+OverheadActual  13: 134217728 op, 188016300.00 ns, 1.4008 ns/op
+OverheadActual  14: 134217728 op, 185701400.00 ns, 1.3836 ns/op
+OverheadActual  15: 134217728 op, 185033100.00 ns, 1.3786 ns/op
+
+WorkloadWarmup   1: 134217728 op, 598435900.00 ns, 4.4587 ns/op
+WorkloadWarmup   2: 134217728 op, 596320000.00 ns, 4.4429 ns/op
+WorkloadWarmup   3: 134217728 op, 602390700.00 ns, 4.4882 ns/op
+WorkloadWarmup   4: 134217728 op, 596763000.00 ns, 4.4462 ns/op
+WorkloadWarmup   5: 134217728 op, 597082900.00 ns, 4.4486 ns/op
+WorkloadWarmup   6: 134217728 op, 598279800.00 ns, 4.4575 ns/op
+WorkloadWarmup   7: 134217728 op, 596010800.00 ns, 4.4406 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 134217728 op, 597631200.00 ns, 4.4527 ns/op
+WorkloadActual   2: 134217728 op, 596407800.00 ns, 4.4436 ns/op
+WorkloadActual   3: 134217728 op, 597187100.00 ns, 4.4494 ns/op
+WorkloadActual   4: 134217728 op, 598148000.00 ns, 4.4565 ns/op
+WorkloadActual   5: 134217728 op, 598873500.00 ns, 4.4620 ns/op
+WorkloadActual   6: 134217728 op, 596562400.00 ns, 4.4447 ns/op
+WorkloadActual   7: 134217728 op, 596460500.00 ns, 4.4440 ns/op
+WorkloadActual   8: 134217728 op, 596368300.00 ns, 4.4433 ns/op
+WorkloadActual   9: 134217728 op, 596477900.00 ns, 4.4441 ns/op
+WorkloadActual  10: 134217728 op, 596051300.00 ns, 4.4409 ns/op
+WorkloadActual  11: 134217728 op, 596829700.00 ns, 4.4467 ns/op
+WorkloadActual  12: 134217728 op, 607337400.00 ns, 4.5250 ns/op
+WorkloadActual  13: 134217728 op, 597042100.00 ns, 4.4483 ns/op
+WorkloadActual  14: 134217728 op, 595945400.00 ns, 4.4401 ns/op
+WorkloadActual  15: 134217728 op, 596529300.00 ns, 4.4445 ns/op
+
+// AfterActualRun
+WorkloadResult   1: 134217728 op, 410198900.00 ns, 3.0562 ns/op
+WorkloadResult   2: 134217728 op, 408975500.00 ns, 3.0471 ns/op
+WorkloadResult   3: 134217728 op, 409754800.00 ns, 3.0529 ns/op
+WorkloadResult   4: 134217728 op, 410715700.00 ns, 3.0601 ns/op
+WorkloadResult   5: 134217728 op, 409130100.00 ns, 3.0483 ns/op
+WorkloadResult   6: 134217728 op, 409028200.00 ns, 3.0475 ns/op
+WorkloadResult   7: 134217728 op, 408936000.00 ns, 3.0468 ns/op
+WorkloadResult   8: 134217728 op, 409045600.00 ns, 3.0476 ns/op
+WorkloadResult   9: 134217728 op, 408619000.00 ns, 3.0444 ns/op
+WorkloadResult  10: 134217728 op, 409397400.00 ns, 3.0502 ns/op
+WorkloadResult  11: 134217728 op, 409609800.00 ns, 3.0518 ns/op
+WorkloadResult  12: 134217728 op, 408513100.00 ns, 3.0437 ns/op
+WorkloadResult  13: 134217728 op, 409097000.00 ns, 3.0480 ns/op
+
+// AfterAll
+// Benchmark Process 11536 has exited with code 0.
+
+Mean = 3.050 ns, StdErr = 0.001 ns (0.04%), N = 13, StdDev = 0.005 ns
+Min = 3.044 ns, Q1 = 3.047 ns, Median = 3.048 ns, Q3 = 3.052 ns, Max = 3.060 ns
+IQR = 0.005 ns, LowerFence = 3.040 ns, UpperFence = 3.059 ns
+ConfidenceInterval = [3.044 ns; 3.055 ns] (CI 99.9%), Margin = 0.006 ns (0.18% of Mean)
+Skewness = 0.84, Kurtosis = 2.69, MValue = 2
+
+// **************************
+// Benchmark: Teste.UnsafeSum: DefaultJob [dia=10, ano=10, mes=10]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "59192fb1-a07d-4fa8-a5de-68f258a2e7c5.dll" --benchmarkName "Program.Teste.UnsafeSum(dia: 10, ano: 10, mes: 10)" --job "Default" --benchmarkId 1 in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\Program\bin\Release\net5.0\59192fb1-a07d-4fa8-a5de-68f258a2e7c5\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.8 (5.0.821.31504), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 247500.00 ns, 247.5000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
+   at System.DateTime..ctor(Int32 year, Int32 month, Int32 day)
+   at Program.Teste.UnsafeSum(Int32 dia, Int32 ano, Int32 mes) in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\Program\Program.cs:line 28
+   at BenchmarkDotNet.Autogenerated.Runnable_1.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\Program\bin\Release\net5.0\59192fb1-a07d-4fa8-a5de-68f258a2e7c5\59192fb1-a07d-4fa8-a5de-68f258a2e7c5.notcs:line 1386
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_1.Run(IHost host, String benchmarkName) in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\Program\bin\Release\net5.0\59192fb1-a07d-4fa8-a5de-68f258a2e7c5\59192fb1-a07d-4fa8-a5de-68f258a2e7c5.notcs:line 954
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\GregoriBrunoFelicio\Desktop\Repositories\EntityFramework-Estudos\Program\bin\Release\net5.0\59192fb1-a07d-4fa8-a5de-68f258a2e7c5\59192fb1-a07d-4fa8-a5de-68f258a2e7c5.notcs:line 52
+// AfterAll
+// Benchmark Process 11228 has exited with code -1.
+
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\Program.Teste-report.csv
+  BenchmarkDotNet.Artifacts\results\Program.Teste-report-github.md
+  BenchmarkDotNet.Artifacts\results\Program.Teste-report.html
+
+// * Detailed results *
+Teste.SafeSum: DefaultJob [dia=10, ano=10, mes=10]
+Runtime = .NET 5.0.8 (5.0.821.31504), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 3.050 ns, StdErr = 0.001 ns (0.04%), N = 13, StdDev = 0.005 ns
+Min = 3.044 ns, Q1 = 3.047 ns, Median = 3.048 ns, Q3 = 3.052 ns, Max = 3.060 ns
+IQR = 0.005 ns, LowerFence = 3.040 ns, UpperFence = 3.059 ns
+ConfidenceInterval = [3.044 ns; 3.055 ns] (CI 99.9%), Margin = 0.006 ns (0.18% of Mean)
+Skewness = 0.84, Kurtosis = 2.69, MValue = 2
+-------------------- Histogram --------------------
+[3.041 ns ; 3.063 ns) | @@@@@@@@@@@@@
+---------------------------------------------------
+
+Teste.UnsafeSum: DefaultJob [dia=10, ano=10, mes=10]
+Runtime = .NET 5.0.8 (5.0.821.31504), X64 RyuJIT; GC = Concurrent Workstation
+There are not any results runs
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.18363.1801 (1909/November2019Update/19H2)
+Intel Core i7-8700 CPU 3.20GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical cores
+.NET SDK=5.0.302
+  [Host]     : .NET 5.0.8 (5.0.821.31504), X64 RyuJIT
+  DefaultJob : .NET 5.0.8 (5.0.821.31504), X64 RyuJIT
+
+
+|    Method | dia | ano | mes |     Mean |     Error |    StdDev |
+|---------- |---- |---- |---- |---------:|----------:|----------:|
+|   SafeSum |  10 |  10 |  10 | 3.050 ns | 0.0056 ns | 0.0046 ns |
+| UnsafeSum |  10 |  10 |  10 |       NA |        NA |        NA |
+
+Benchmarks with issues:
+  Teste.UnsafeSum: DefaultJob [dia=10, ano=10, mes=10]
+
+// * Hints *
+Outliers
+  Teste.SafeSum: Default -> 2 outliers were removed (4.46 ns, 4.53 ns)
+
+// * Legends *
+  dia    : Value of the 'dia' parameter
+  ano    : Value of the 'ano' parameter
+  mes    : Value of the 'mes' parameter
+  Mean   : Arithmetic mean of all measurements
+  Error  : Half of 99.9% confidence interval
+  StdDev : Standard deviation of all measurements
+  1 ns   : 1 Nanosecond (0.000000001 sec)
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:00:19 (19.14 sec), executed benchmarks: 2
+
+Global total time: 00:00:22 (22.63 sec), executed benchmarks: 2
+// * Artifacts cleanup *
