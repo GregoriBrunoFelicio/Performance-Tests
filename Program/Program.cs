@@ -1,5 +1,6 @@
 ﻿#nullable enable
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
 using System;
 using System.IO;
 
@@ -11,19 +12,10 @@ namespace Program
         {
             unsafe
             {
-                //BenchmarkRunner.Run<Teste>();
-                var n1 = 10;
-                var n2 = 10;
-
-                var n3 = &n1;
-                var n4 = &n2;
-
-                var a = SumUnsafe(n3, n4);
-                Console.WriteLine(a);
+                BenchmarkRunner.Run<Teste>();
             }
         }
 
-        static unsafe int SumUnsafe(int* n1, int* n2) => (int)(&n1 + (ulong)&n2);
     }
 
     public class Teste
@@ -65,5 +57,18 @@ This is the final, fifth line.";
             }
         }
 
+        [Benchmark]
+        public void ComFinalize()
+        {
+            var reader = new StringReader(manyLines);
+            string? item;
+            do
+            {
+                item = reader.ReadLine();
+                Console.WriteLine(item);
+            } while (item != null);
+
+            GC.SuppressFinalize(this);
+        }
     }
 }
