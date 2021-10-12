@@ -8,8 +8,7 @@ Intel Core i7-8700 CPU 3.20GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical c
 
 
 ```
-|      Method |     Mean |     Error |    StdDev |   Median |
-|------------ |---------:|----------:|----------:|---------:|
-|  ComDispose | 1.669 ms | 0.1534 ms | 0.4523 ms | 1.468 ms |
-| ComTryCatch | 1.620 ms | 0.1044 ms | 0.3062 ms | 1.478 ms |
-| ComFinalize | 1.441 ms | 0.0288 ms | 0.0541 ms | 1.455 ms |
+|      Method |      Mean |     Error |    StdDev |
+|------------ |----------:|----------:|----------:|
+|      Teste1 | 0.0264 ns | 0.0085 ns | 0.0075 ns |
+| TesteNormal | 0.0203 ns | 0.0008 ns | 0.0006 ns |
